@@ -7,7 +7,7 @@
 bool parseAndExecute(char *input){
     //split the input string by '\n' using strtok
     char *verb = strtok(input, " \n");
-    char *noun = strtok(NULL, " \n");
+    char *noun = strtok(NULL, "\n");
     if (verb != NULL) {
         if (strcmp(verb, "quit") == 0) {
             return false;
