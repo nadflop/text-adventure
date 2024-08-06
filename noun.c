@@ -5,14 +5,23 @@
 #include "header/misc.h"
 
 static bool objectHasTag(OBJECT *obj, const char *noun) {
-    return noun != NULL && *noun != '\0' && strcmp(noun, obj->tag) == 0;
+    if (noun != NULL && *noun != '\0') {
+        const char **tag;
+        for (tag = obj->tags; *tag != NULL; tag++) {
+            if (strcmp(*tag, noun) == 0) return true;
+        }
+    }
+    return false;
 }
+
+static OBJECT ambiguousNoun;
 
 static OBJECT *getObject(const char *noun, OBJECT *from, DISTANCE maxDistance) {
     OBJECT *obj, *res = NULL;
     for (obj = objs; obj < endOfObjs; obj++) {
         if (objectHasTag(obj, noun) && getDistance(from, obj) <= maxDistance) {
-            res = obj;
+            //if the tag is an ambigious tag which is non-unique, it's an ambiguousNoun
+            res = res == NULL ? obj : &ambiguousNoun;
         }
     }
     return res;
@@ -28,6 +37,10 @@ OBJECT *getVisible(const char *intention, const char *noun) {
         else {
             printf("You don't see any %s here.\n");
         }
+    }
+    else if (obj == &ambiguousNoun) {
+        printf("Please be specific about which %s you mean.\n", noun);
+        obj = NULL;
     }
     return obj;
 }
@@ -50,6 +63,11 @@ OBJECT *getPosession(OBJECT *from, const char *verb, const char *noun) {
                     noun, from->description);
         }
     }
+    else if (obj == &ambiguousNoun) {
+        printf("Please be specific about which %s you mean.\n", noun);
+        obj = NULL;
+    }
+    
     else if (obj == from) {
         printf("You should not be doing that to %s.\n", obj->description);
         obj == NULL;
