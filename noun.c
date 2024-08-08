@@ -35,7 +35,7 @@ OBJECT *getVisible(const char *intention, const char *noun) {
             printf("I don't understand %s.\n", intention);
         }
         else {
-            printf("You don't see any %s here.\n");
+            printf("You don't see any %s here.\n", intention);
         }
     }
     else if (obj == &ambiguousNoun) {
@@ -70,7 +70,7 @@ OBJECT *getPosession(OBJECT *from, const char *verb, const char *noun) {
     
     else if (obj == from) {
         printf("You should not be doing that to %s.\n", obj->description);
-        obj == NULL;
+        obj = NULL;
     }
     return obj;
 }

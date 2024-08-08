@@ -1,3 +1,5 @@
+#ifndef OBJECT_H
+#define OBJECT_H
 
 typedef struct object {
     const char *description;
@@ -20,3 +22,5 @@ extern OBJECT objs[];
 #define wallCave	(objs + 9)
 
 #define endOfObjs	(objs + 10)
+
+#endif
