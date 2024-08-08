@@ -1,15 +1,30 @@
-CC = gcc
-CFLAGS = -g -Wall
-objects = main.o location.o parsexec.o
+all: success.txt src.zip map.png
 
-default: all
+C = object.c misc.c noun.c location.c move.c inventory.c parsexec.c main.c
+H = header/object.h header/misc.h header/noun.h header/location.h header/move.h header/inventory.h header/parsexec.h
 
+success.txt: lilcave testscript.txt baseline.txt
+	./test.sh
+	mv -f transcript.txt $@
 
-all: $(objects)
-	$(CC) $^ -o prog
+lilcave: $(C) $(H)
+	gcc -Wall -Wextra -Wpedantic -Werror $(C) -o $@
 
-$(objects): %.o: %.c
-	$(CC) -c $^ -o $@
+object.h: object.awk object.txt
+	awk -v pass=h -f object.awk object.txt > $@
 
-clean: 
-	rm -f *.c *.o all
+object.c: object.awk object.txt
+	awk -v pass=c1 -f object.awk object.txt > $@
+	awk -v pass=c2 -f object.awk object.txt >> $@
+
+map.png: map.gv
+	dot -Tpng -o $@ $<
+
+map.gv: map.awk object.txt
+	awk -f map.awk object.txt > $@
+
+src.zip: $(C) $(H) object.txt makefile testscript.txt baseline.txt
+	zip -rq $@ $^
+
+clean:
+	$(RM) object.c object.h lilcave map.gv map.png transcript.txt success.txt src.zip
