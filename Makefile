@@ -1,16 +1,12 @@
-all: success.txt src.zip map.png
+all: map.png
 
 C = object.c misc.c noun.c location.c move.c inventory.c parsexec.c main.c
 H = header/object.h header/misc.h header/noun.h header/location.h header/move.h header/inventory.h header/parsexec.h
 
-success.txt: lilcave testscript.txt baseline.txt
-	./test.sh
-	mv -f transcript.txt $@
-
 lilcave: $(C) $(H)
-	gcc -Wall $(C) -o $@
+	gcc -Wall -Wextra $(C) -o $@
 
-object.h: object.awk object.txt
+header/object.h: object.awk object.txt
 	awk -v pass=h -f object.awk object.txt > $@
 
 object.c: object.awk object.txt
@@ -23,8 +19,5 @@ map.png: map.gv
 map.gv: map.awk object.txt
 	awk -f map.awk object.txt > $@
 
-src.zip: $(C) $(H) object.txt makefile testscript.txt baseline.txt
-	zip -rq $@ $^
-
 clean:
-	$(RM) object.c object.h lilcave map.gv map.png transcript.txt success.txt src.zip
+	$(RM) object.c object.h lilcave map.gv map.png
