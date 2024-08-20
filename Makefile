@@ -20,4 +20,4 @@ map.gv: map.awk object.txt
 	awk -f map.awk object.txt > $@
 
 clean:
-	$(RM) object.c object.h lilcave map.gv map.png
+	$(RM) object.c header/object.h lilcave map.gv map.png
