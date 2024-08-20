@@ -11,7 +11,7 @@ OBJECT *getPassage(OBJECT *from, OBJECT *to) {
     if (from != NULL && to != NULL) {
         OBJECT *obj;
         for (obj = objs; obj < endOfObjs; obj++) {
-            if (isHolding(from, obj) && obj->destination == to) {
+            if (isHolding(from, obj) && obj->prospect == to) {
                 return obj;
             }
         }
@@ -35,7 +35,7 @@ OBJECT *actorHere(void) {
     OBJECT *obj;
     //return the actor present at the same location as player
     for (obj = objs; obj < endOfObjs; obj++) {
-        if (isHolding(player->location, obj) && obj == guard) {
+        if (isHolding(player->location, obj) && obj != player && obj->health > 0) {
             return obj;
         }
     }
@@ -49,7 +49,7 @@ int listObjectsAtLocation(OBJECT *location) {
     for (obj = objs; obj < endOfObjs; obj++) {
         if (obj != player && isHolding(location, obj)) {
             if (count++ == 0) {
-                printf("You see:\n");
+                printf("%s:\n", location->contents);
             }
             printf("%s\n", obj->description);
         }

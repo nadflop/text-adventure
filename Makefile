@@ -1,4 +1,4 @@
-all: map.png
+all: object.c header/object.h lilcave 
 
 C = object.c misc.c noun.c location.c move.c inventory.c parsexec.c main.c
 H = header/object.h header/misc.h header/noun.h header/location.h header/move.h header/inventory.h header/parsexec.h

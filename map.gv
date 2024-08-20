@@ -1,3 +1,4 @@
 digraph map {
+	field -> cave[style=dashed]
 	cave -> field
 }
