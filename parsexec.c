@@ -3,6 +3,7 @@
 #include <string.h>
 #include "header/location.h"
 #include "header/inventory.h"
+#include "header/openclose.h"
 
 bool parseAndExecute(char *input){
     //split the input string by '\n' using strtok
@@ -32,6 +33,18 @@ bool parseAndExecute(char *input){
         }
         else if (strcmp(verb, "inventory") == 0) {
             executeInventory();
+        }
+        else if (strcmp(verb, "open") == 0) {
+            executeOpen(noun);
+        }
+        else if (strcmp(verb, "close") == 0) {
+            executeClose(noun);
+        }
+        else if (strcmp(verb, "lock") == 0) {
+            executeLock(noun);
+        }
+        else if (strcmp(verb, "unlock") == 0) {
+            executeUnlock(noun);
         }
         else {
             printf("I don't know how to '%s'.\n", verb);

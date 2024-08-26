@@ -1,7 +1,7 @@
-all: object.c header/object.h lilcave 
+all: object.c header/object.h map.gv map.png lilcave 
 
-C = object.c misc.c noun.c location.c move.c inventory.c parsexec.c main.c
-H = header/object.h header/misc.h header/noun.h header/location.h header/move.h header/inventory.h header/parsexec.h
+C = object.c misc.c noun.c location.c move.c inventory.c openclose.c reach.c toggle.c parsexec.c main.c 
+H = header/object.h header/misc.h header/noun.h header/location.h header/move.h header/inventory.h header/parsexec.h header/openclose.h header/reach.h header/toggle.h
 
 lilcave: $(C) $(H)
 	gcc -Wall -Wextra $(C) -o $@
