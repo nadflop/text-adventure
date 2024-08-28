@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
+#include "header/object.h"
 #include "header/misc.h"
 #include "header/match.h"
 #include "header/location.h"
@@ -21,10 +22,9 @@ static bool executeNoMatch(void) {
     const char *src = *params;
     int len;
     //isspace checks for whitespaces (space, tab)
-    for (len = 0; src[len] != '\0' && !isspace(src[len]); len++) {
-        if (len > 0) {
-            printf("I don't know how to '%.*s'.\n", len, src);
-        }
+    for (len = 0; src[len] != '\0' && !isspace(src[len]); len++);
+    if (len > 0) {
+        printf("I don't know how to '%.*s'.\n", len, src);
     }
     return true;
 }
@@ -52,7 +52,6 @@ bool parseAndExecute(const char *input){
         { "A"               , executeNoMatch    }
     };
     const COMMAND *cmd;
-    for (cmd = commands; !matchCommand(input, cmd->pattern); cmd++) {
-        return (*cmd->function)();
-    }
+    for (cmd = commands; !matchCommand(input, cmd->pattern); cmd++);
+    return (*cmd->function)();
 }

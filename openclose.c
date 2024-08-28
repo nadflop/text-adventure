@@ -2,31 +2,36 @@
 #include <stdio.h>
 #include "header/object.h"
 #include "header/reach.h"
+#include "header/match.h"
 
-void executeOpen(const char *noun) {
-    OBJECT *obj = reachableObject("what you want to open", noun);
+bool executeOpen(void) {
+    OBJECT *obj = reachableObject("what you want to open", params[0]);
     if (obj != NULL) {
         (*obj->open)();
     }
+    return true;
 }
 
-void executeClose(const char *noun) {
-    OBJECT *obj = reachableObject("what you want to close", noun);
+bool executeClose(void) {
+    OBJECT *obj = reachableObject("what you want to close", params[0]);
     if (obj != NULL) {
         (*obj->close)();
     }
+    return true;
 }
 
-void executeLock(const char *noun) {
-    OBJECT *obj = reachableObject("what you want to lock", noun);
+bool executeLock(void) {
+    OBJECT *obj = reachableObject("what you want to lock", params[0]);
     if (obj != NULL) {
         (*obj->lock)();
     }
+    return true;
 }
 
-void executeUnlock(const char *noun) {
-    OBJECT *obj = reachableObject("what you want to unlock", noun);
+bool executeUnlock(void) {
+    OBJECT *obj = reachableObject("what you want to unlock", params[0]);
     if (obj != NULL) {
         (*obj->unlock)();
     }
+    return true;
 }
