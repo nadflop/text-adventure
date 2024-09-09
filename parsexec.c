@@ -7,6 +7,7 @@
 #include "header/match.h"
 #include "header/location.h"
 #include "header/inventory.h"
+#include "header/inventory2.h"
 #include "header/openclose.h"
 
 typedef struct {
@@ -40,9 +41,14 @@ bool parseAndExecute(const char *input){
         {"examine A"        , executeLook       },
         { "go to A"         , executeGo         },
         { "go A"            , executeGo         },
+        { "get A from B"    , executeGetFrom    },
         { "get A"           , executeGet        },
+        { "put A in B"      , executePutIn      },
+        { "drop A in B"     , executePutIn      },
         { "drop A"          , executeDrop       },
+        { "ask A from B"    , executeAskFrom    },
         { "ask A"           , executeAsk        },
+        { "give A to B"     , executeGiveTo     },
         { "give A"          , executeGive       },
         { "inventory"       , executeInventory  },
         { "open A"          , executeOpen       },

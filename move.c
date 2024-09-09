@@ -37,6 +37,11 @@ void moveObject(OBJECT *obj, OBJECT *to) {
     else if (to == NULL) {
         printf("There is nobody here to give that to.\n");
     }
+    else if (to->capacity == 0) {
+        printf(obj == keyForBox && (to == closedBox || to == lockedBox) ?
+                "The key seems to fit the lock.\n" :
+                "It doesn't seem to fit in.\n");
+    }
     else if (obj->weight >  to->capacity) {
         printf("That is way too heavy.\n");
     }
