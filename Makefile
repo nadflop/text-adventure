@@ -1,7 +1,7 @@
 all: object.c header/object.h map.gv map.png lilcave success.txt
 
-C = object.c misc.c noun.c location.c move.c inventory.c inventory2.c openclose.c reach.c toggle.c parsexec.c match.c main.c onoff.c
-H = header/object.h header/misc.h header/noun.h header/location.h header/move.h header/inventory.h header/parsexec.h header/openclose.h header/reach.h header/toggle.h header/match.h header/inventory2.h header/onoff.h
+C = object.c misc.c noun.c location.c move.c inventory.c inventory2.c openclose.c reach.c toggle.c parsexec.c match.c main.c onoff.c expand.c
+H = header/object.h header/misc.h header/noun.h header/location.h header/move.h header/inventory.h header/parsexec.h header/openclose.h header/reach.h header/toggle.h header/match.h header/inventory2.h header/onoff.h header/expand.h
 
 lilcave: $(C) $(H)
 	gcc -Wall -Wextra $(C) -o $@
