@@ -1,5 +1,6 @@
 digraph map {
 	node [style=filled]
+	heaven -> field
 	field -> cave
 	field -> cave[style=dashed]
 	cave -> field
@@ -7,5 +8,6 @@ digraph map {
 	backroom -> cave[style=dashed]
 	backroom [fillcolor=grey]
 	field [fillcolor=white]
+	heaven [fillcolor=white]
 	cave [fillcolor=grey]
 }

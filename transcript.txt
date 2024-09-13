@@ -1,0 +1,251 @@
+Welcome to Little Cave Adventure 
+You are in an open field. 
+You see:
+a silver coin
+a burly guard
+a cave entrance to the east
+dense forest all around
+a lamp
+a wooden club
+a dagger
+
+--> mumble
+I don't know how to 'mumble'.
+
+--> inventory
+You are empty-handed.
+
+--> get whatever
+I don't understand what you want to get.
+
+--> get yourself
+You should not be doing that to yourself.
+
+--> get silver coin
+You pick up a silver coin.
+
+--> get coin
+You already have a silver coin.
+
+--> get guard
+That is way too heavy.
+
+--> get cave
+Too far away, move closer please.
+
+--> look cave
+Too far away, move closer please.
+
+--> inventory
+You have:
+a silver coin
+
+--> look at coin
+The coin has an eagle on the obverse.
+
+--> look around
+You are in an open field. 
+You see:
+a burly guard
+a cave entrance to the east
+dense forest all around
+a lamp
+a wooden club
+a dagger
+
+--> get lamp
+You pick up a lamp.
+
+--> inventory
+You have:
+a silver coin
+a lamp
+
+--> go cave
+The guard stops you from walking into the cave.
+
+--> go east
+The guard stops you from walking into the cave.
+
+--> ask coin
+There appears to be no coin you can get from a burly guard.
+
+--> put coin in cave
+Too far away, move closer please.
+
+--> give coin to guard
+You give a silver coin to a burly guard.
+
+--> give lamp to guard
+You give a lamp to a burly guard.
+
+--> ask lamp from guard
+It seems a burly guard feels reluctant to give you anything.
+
+--> open yourself
+You should not be doing that to yourself.
+
+--> open cave
+Too far away, move closer please.
+
+--> go cave
+You walk into the cave.
+
+It is very dark in here. 
+You see:
+an exit to the west
+
+--> turn lamp on
+It's too dark.
+
+--> look around
+It is very dark in here. 
+You see:
+an exit to the west
+
+--> get key from cave
+It's too dark.
+
+--> ask coin
+I don't understand who you want to ask.
+
+--> give coin
+You are not holding any coin.
+
+--> go south
+It's too dark.
+
+--> open door
+It's too dark.
+
+--> go south
+It's too dark.
+
+--> open box
+It's too dark.
+
+--> put key in box
+You are not holding any key.
+
+--> unlock box
+It's too dark.
+
+--> unlock box
+It's too dark.
+
+--> lock box
+It's too dark.
+
+--> unlock box
+It's too dark.
+
+--> open box
+It's too dark.
+
+--> look box
+It's too dark.
+
+--> get coin from box
+It's too dark.
+
+--> put coin in box
+You are not holding any coin.
+
+--> lock box
+It's too dark.
+
+--> close box
+It's too dark.
+
+--> lock box
+It's too dark.
+
+--> drop key
+You are not holding any key.
+
+--> lock box
+It's too dark.
+
+--> unlock box
+It's too dark.
+
+--> get key
+It's too dark.
+
+--> go north
+It's too dark.
+
+--> drop key
+You are not holding any key.
+
+--> go west
+You walk out of the cave.
+
+You are in an open field. 
+You see:
+a burly guard
+a cave entrance to the east
+dense forest all around
+a wooden club
+a dagger
+
+--> turn lamp on
+You would have to get it from a burly guard first.
+
+--> turn lamp off
+You would have to get it from a burly guard first.
+
+--> turn lamp off
+You would have to get it from a burly guard first.
+
+--> drop lamp
+You are not holding any lamp.
+
+--> ask coin
+It seems a burly guard feels reluctant to give you anything.
+
+--> turn coin on
+You would have to get it from a burly guard first.
+
+--> turn coin off
+You would have to get it from a burly guard first.
+
+--> open coin
+You would have to get it from a burly guard first.
+
+--> close coin
+You would have to get it from a burly guard first.
+
+--> inventory
+You are empty-handed.
+
+--> lock coin
+You would have to get it from a burly guard first.
+
+--> unlock gold coin
+You don't see any gold coin here.
+
+--> drop coin
+You are not holding any coin.
+
+--> drop coin
+You are not holding any coin.
+
+--> look around
+You are in an open field. 
+You see:
+a burly guard
+a cave entrance to the east
+dense forest all around
+a wooden club
+a dagger
+
+--> look backroom
+You don't see any backroom here.
+
+--> go backroom
+You don't see any backroom here.
+
+--> quit
+
+Bye!
