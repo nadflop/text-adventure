@@ -6,8 +6,8 @@ digraph map {
 	cave -> field
 	cave -> backroom[style=dashed]
 	backroom -> cave[style=dashed]
-	backroom [fillcolor=grey]
 	field [fillcolor=white]
-	heaven [fillcolor=white]
+	backroom [fillcolor=grey]
 	cave [fillcolor=grey]
+	heaven [fillcolor=white]
 }

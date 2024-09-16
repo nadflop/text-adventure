@@ -6,7 +6,7 @@
 #include "header/move.h"
 #include "header/reach.h"
 
-bool executeGetFrom(void) {
+int executeGetFrom(void) {
     OBJECT *from = reachableObject("where to get that from", params[1]);
     if (from != NULL && getVisible("what you want to get", params[0]) != NULL) {
         if (from->health > 0) {
@@ -17,10 +17,10 @@ bool executeGetFrom(void) {
         }
     }
 
-    return true;
+    return 0;
 }
 
-bool executePutIn(void) {
+int executePutIn(void) {
     OBJECT *obj = getPossession(player, "put", params[0]);
     if (obj != NULL) {
         OBJECT *to = reachableObject("where to put that in", params[1]);
@@ -33,10 +33,10 @@ bool executePutIn(void) {
             }
         }
     }
-    return true;
+    return 0;
 }
 
-bool executeAskFrom(void) {
+int executeAskFrom(void) {
     OBJECT *from = reachableObject("who to ask that", params[1]);
     if (from != NULL) {
         if (from->health > 0) {
@@ -48,10 +48,10 @@ bool executeAskFrom(void) {
             }
         }
     }
-    return true;
+    return 0;
 }
 
-bool executeGiveTo(void) {
+int executeGiveTo(void) {
     OBJECT *obj = getPossession(player, "give", params[0]);
     if (obj != NULL) {
         OBJECT *to = reachableObject("who to give that to", params[1]);
@@ -64,5 +64,5 @@ bool executeGiveTo(void) {
             }
         }
     }
-    return true;
+    return 0;
 }

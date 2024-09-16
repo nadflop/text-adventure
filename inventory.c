@@ -6,7 +6,7 @@
 #include "header/move.h"
 #include "header/match.h"
 
-bool executeGet(void) {
+int executeGet(void) {
     OBJECT *obj = getVisible("what you want to get", params[0]);
     switch (getDistance(player, obj))
     {
@@ -32,27 +32,27 @@ bool executeGet(void) {
                 moveObject(obj,player);
             }
     }
-    return true;
+    return 0;
 }
 
-bool executeDrop(void) {
+int executeDrop(void) {
     moveObject(getPossession(player, "drop", params[0]), player->location);
-    return true;
+    return 0;
 }
 
-bool executeAsk(void) {
+int executeAsk(void) {
     moveObject(getPossession(actorHere(), "ask", params[0]), player);
-    return true;
+    return 0;
 }
 
-bool executeGive(void) {
+int executeGive(void) {
     moveObject(getPossession(player, "give", params[0]), actorHere());
-    return true;
+    return 0;
 }
 
-bool executeInventory(void) {
+int executeInventory(void) {
     if (listObjectsAtLocation(player) == 0) {
         printf("You are empty-handed.\n");
     }
-    return true;
+    return 0;
 }

@@ -1,9 +1,9 @@
 #ifndef OPENCLOSE_H
 #define OPENCLOSE_H
 
-extern bool executeOpen(void);
-extern bool executeClose(void);
-extern bool executeLock(void);
-extern bool executeUnlock(void);
+extern int executeOpen(void);
+extern int executeClose(void);
+extern int executeLock(void);
+extern int executeUnlock(void);
 
 #endif
